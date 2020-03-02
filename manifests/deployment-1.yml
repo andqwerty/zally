@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: "zallytestcluster"
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: "zallytestcluster"
+    spec:
+      containers:
+        - name: "zallytestcluster"
+          image: "danfosscmsregistry.azurecr.io/zallytestcluster"
+          ports:
+          - containerPort: 8080
