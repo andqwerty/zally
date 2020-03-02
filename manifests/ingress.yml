@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+    name: "zallytestcluster"
+    labels:
+        app: "zallytestcluster"
+    annotations:
+        kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+    rules:
+        - host: zallytestcluster903b-zallytestcluster.40df58f872284d82ac69.northeurope.aksapp.io
+          http:
+            paths:
+            - path: /
+              backend:
+                serviceName: "zallytestcluster"
+                servicePort: 8080
